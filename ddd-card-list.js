@@ -17,14 +17,13 @@ export class DddCardList extends DDDPulseEffectSuper(DDD) {
   static get tag() {
     return "ddd-card-list";
   }
+   
 
   constructor() {
     super();
     this.title = "";
-    this.image = "";
-    this.description = "";
-    this.primary = "7";
-    this.accent = "#fff"; 
+    this.primary = "";
+    this.accent = "";
   }
 
   // Lit reactive properties
@@ -32,9 +31,6 @@ export class DddCardList extends DDDPulseEffectSuper(DDD) {
     return {
       ...super.properties,
       title: { type: String },
-      image: { type: String },
-      description: { type: String },
-      link: { type: String },
       primary: {
         type: String,
         reflect: true,
@@ -57,7 +53,7 @@ export class DddCardList extends DDDPulseEffectSuper(DDD) {
           border-radius: var(--ddd-border-radius, 8px);
           padding: var(--ddd-spacing-3);
           text-align: center;
-          background-color: var(--ddd-theme-accent);
+          background-color: var(--ddd-theme-accent var(--ddd-accent));
           font-family: var(--ddd-font-navigation);
         }
         .wrapper {
@@ -84,7 +80,7 @@ export class DddCardList extends DDDPulseEffectSuper(DDD) {
           align-items: center;
           text-align: center;
           padding: var(--ddd-spacing-2);
-          border: 1px solid var(--ddd-theme-primary);
+          border: 1px solid var(--ddd-theme-primary, var(--ddd-primary));
           border-radius: var(--ddd-radius-md);
           background-color: var(--ddd-theme-accent);
         }
@@ -100,15 +96,33 @@ export class DddCardList extends DDDPulseEffectSuper(DDD) {
     </div>`;
   }
 
+  updated(changedProperties) {
+    super.updated(changedProperties);
+  
+    // Check if the `primary` property (ddd-primary) has changed
+    if (changedProperties.has('primary')) {
+      this._handleSlotChange({
+        target: this.shadowRoot.querySelector('slot'),
+      });
+    }
+  }
+
   _handleSlotChange(e) {
+    console.log("Slot changed", e);
     const slot = e.target;
     const assignedNodes = slot.assignedNodes().filter(node => node.nodeType === Node.ELEMENT_NODE);
     assignedNodes.forEach(node => {
       if (node.tagName.toLowerCase() === 'ddd-card') {
         node.setAttribute('ddd-primary', this.primary);
+        console.log("we got here", node, this.primary);
       }
     });
   }
+
+
+
+
+  
 }
 
 globalThis.customElements.define(DddCardList.tag, DddCardList);

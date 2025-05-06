@@ -40,6 +40,7 @@ export class DddCard extends DDDPulseEffectSuper(DDD) {
     };
   }
 
+
   // Lit scoped styles
   static get styles() {
     return [super.styles,
@@ -51,8 +52,139 @@ export class DddCard extends DDDPulseEffectSuper(DDD) {
           padding: var(--ddd-spacing-0);
           margin: var(--ddd-spacing-3);
           width: 400px;
-          background-color: var(--ddd-primary, #fff);
+          background-color: #000(--lowContrast-override, white)
         }
+        
+        
+        :host([ddd-primary="21"]) button {
+          background-color: var(--ddd-primary-21);
+        }
+        :host([ddd-primary="20"]) button {
+          background-color: var(--ddd-primary-20);
+        }
+        :host([ddd-primary="19"]) button {
+          background-color: var(--ddd-primary-19);
+        }
+        :host([ddd-primary="18"]) button {
+          background-color: var(--ddd-primary-18);
+        }
+        :host([ddd-primary="17"]) button {
+          background-color: var(--ddd-primary-17);
+        }
+        :host([ddd-primary="16"]) button {
+          background-color: var(--ddd-primary-16);
+        }
+        :host([ddd-primary="15"]) button {
+          background-color: var(--ddd-primary-15);
+        }
+        :host([ddd-primary="14"]) button {
+          background-color: var(--ddd-primary-14);
+        }
+        :host([ddd-primary="13"]) button {
+          background-color: var(--ddd-primary-13);
+        }
+        :host([ddd-primary="12"]) button {
+          background-color: var(--ddd-primary-12);
+        }
+        :host([ddd-primary="11"]) button {
+          background-color: var(--ddd-primary-11);
+        }
+        :host([ddd-primary="10"]) button {
+          background-color: var(--ddd-primary-10);
+
+        }
+        :host([ddd-primary="9"]) button {
+          background-color: var(--ddd-primary-9);
+        }
+        :host([ddd-primary="8"]) button {
+          background-color: var(--ddd-primary-8);
+        }
+        :host([ddd-primary="7"]) button {
+          background-color: var(--ddd-primary-7);
+        }
+        :host([ddd-primary="6"]) button {
+          background-color: var(--ddd-primary-6);
+        }
+        :host([ddd-primary="5"]) button {
+          background-color: var(--ddd-primary-5);
+        }
+        :host([ddd-primary="4"]) button {
+          background-color: var(--ddd-primary-4);
+        }
+        :host([ddd-primary="3"]) button {
+          background-color: var(--ddd-primary-3);
+        }
+        :host([ddd-primary="2"]) button {
+          background-color: var(--ddd-primary-2);
+        }
+        :host([ddd-primary="1"]) button {
+          background-color: var(--ddd-primary-1);
+        }
+
+        :host([ddd-primary="21"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-21) solid;
+        }
+        :host([ddd-primary="20"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-20) solid;
+        }
+        :host([ddd-primary="19"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-19) solid;
+        }
+        :host([ddd-primary="18"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-18) solid;
+        }
+        :host([ddd-primary="17"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-17) solid;
+        }
+        :host([ddd-primary="16"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-16) solid;
+        }
+        :host([ddd-primary="15"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-15) solid;
+        }
+        :host([ddd-primary="14"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-14) solid;
+        }
+        :host([ddd-primary="13"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-13) solid;
+        }
+        :host([ddd-primary="12"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-12) solid;
+        }
+        :host([ddd-primary="11"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-11) solid;
+        }
+        :host([ddd-primary="10"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-10) solid;
+        }
+        :host([ddd-primary="9"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-9) solid;
+        }
+        :host([ddd-primary="8"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-8) solid;
+        }
+        :host([ddd-primary="7"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-7) solid;
+        }
+        :host([ddd-primary="6"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-6) solid;
+        }
+        :host([ddd-primary="5"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-5) solid;
+        }
+        :host([ddd-primary="4"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-4) solid;
+        }
+        :host([ddd-primary="3"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-3) solid;
+        }
+        :host([ddd-primary="2"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-2) solid;
+        }
+        :host([ddd-primary="1"]) .image-wrapper {
+          border-bottom: 12px var(--ddd-primary-1) solid;
+        }
+        
         img {
           border-radius: var(--ddd-border-radius, 12px)
             var(--ddd-border-radius, 12px) 0 0;
@@ -129,6 +261,14 @@ export class DddCard extends DDDPulseEffectSuper(DDD) {
           border-radius: var(--ddd-radius-md);
           background-color: var(--ddd-theme-accent);
         }
+        @media (prefers-color-scheme: dark) {
+          .title-bar {
+            color: var(--highContrast-override, white);
+          }
+          .description {
+            color: var(--highContrast-override, white);
+          }
+        }
       `,
     ];
   }
@@ -153,6 +293,7 @@ export class DddCard extends DDDPulseEffectSuper(DDD) {
     `;
   }
 
+  
   
   clickEvent() {
     window.open(this.link);
